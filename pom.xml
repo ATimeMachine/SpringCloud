@@ -76,6 +76,7 @@
 		<module>eureka-client</module>
 		<module>eureka-consumer</module>
         <module>eureka-consumer-ribbon</module>
+		<module>config-server-git</module>
 	</modules>
 
 </project>
