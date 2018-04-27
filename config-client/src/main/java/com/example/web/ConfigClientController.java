@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ConfigClientController {
 
-   /* @Value("${info}")
-    private String hello;*/
+   @Value("${spring.datasource.password}")
+    private String hello;
 
     @Value("${abc}")
     private String abc;
@@ -22,10 +22,10 @@ public class ConfigClientController {
     @Value("${girl.beautiful}")
     private String girl;
 
-    /*@GetMapping("hello")
+    @GetMapping("hello")
     public String getHello(){
         return this.hello;
-    }*/
+    }
 
     @GetMapping("girl")
     public String getGirl(){
