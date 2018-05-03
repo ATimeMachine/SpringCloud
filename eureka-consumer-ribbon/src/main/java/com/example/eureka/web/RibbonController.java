@@ -1,7 +1,9 @@
 package com.example.eureka.web;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -38,5 +40,23 @@ public class RibbonController {
         String s = "ribbon ->" + restTemplate.getForObject("http://eureka-consumer/consumer", String.class);
         System.out.println(s);
         return s;
+    }
+
+    @GetMapping("/ribbon/{param}")
+    public String testBalanced(@PathVariable("param") String param){
+        System.out.println(param);
+        return param;
+    }
+
+    @GetMapping("ribbon/hy")
+    @HystrixCommand(fallbackMethod = "error")
+    public String testHystrix(){
+        String result = restTemplate.getForObject("http://eureka-consumer/consumer/hystrix", String.class);
+        System.out.println(result);
+        return result;
+    }
+
+    public String error(){
+        return "error";
     }
 }

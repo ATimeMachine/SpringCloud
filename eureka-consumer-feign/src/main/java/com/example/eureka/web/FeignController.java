@@ -4,6 +4,7 @@ import com.example.eureka.feign.DcClient;
 import com.example.eureka.feign.RibbonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -47,5 +48,10 @@ public class FeignController {
       String s = "feign ->" + ribbonClient.circle();
       System.out.println();
       return s;
+   }
+
+   @GetMapping("/feign/{param}")
+   public String testBalanced(@PathVariable("param") String param){
+      return ribbonClient.testBalanced(param);
    }
 }

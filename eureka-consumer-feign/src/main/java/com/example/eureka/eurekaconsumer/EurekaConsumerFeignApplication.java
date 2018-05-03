@@ -10,6 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan("com.example.eureka")
 @EnableEurekaClient
 @EnableFeignClients("com.example.eureka.feign")
+
 public class EurekaConsumerFeignApplication {
 
 	public static void main(String[] args) {

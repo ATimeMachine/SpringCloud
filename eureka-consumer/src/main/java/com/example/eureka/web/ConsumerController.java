@@ -30,4 +30,10 @@ public class ConsumerController {
         return "consumer ->" + restTemplate.getForObject(url,String.class);
     }
 
+    @GetMapping("/consumer/hystrix")
+    public String testHystrix(){
+        String s = "success";
+        System.out.println(s);
+        return s;
+    }
 }
