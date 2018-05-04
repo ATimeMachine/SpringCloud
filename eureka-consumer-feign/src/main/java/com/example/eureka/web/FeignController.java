@@ -51,6 +51,7 @@ public class FeignController {
    }
 
    @GetMapping("/feign/{param}")
+
    public String testBalanced(@PathVariable("param") String param){
       return ribbonClient.testBalanced(param);
    }
