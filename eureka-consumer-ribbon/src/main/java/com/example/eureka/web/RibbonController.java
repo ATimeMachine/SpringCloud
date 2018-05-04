@@ -51,12 +51,14 @@ public class RibbonController {
     @GetMapping("ribbon/hy")
     @HystrixCommand(fallbackMethod = "error")
     public String testHystrix(){
+        //int i = 1/0;
         String result = restTemplate.getForObject("http://eureka-consumer/consumer/hystrix", String.class);
         System.out.println(result);
         return result;
     }
 
-    public String error(){
+    public String error(Throwable throwable){
+        System.out.println(throwable.getMessage());
         return "error";
     }
 }
