@@ -62,19 +62,6 @@
 		</plugins>
 	</build>
 
-	<distributionManagement>
-		<repository>
-			<id>deployment</id>
-			<name>Internal Releases</name>
-			<url>C:\Users\SunEee\.m2\repository</url>
-		</repository>
-		<snapshotRepository>
-			<id>deployment</id>
-			<name>Internal Releases</name>
-			<url>http://maven.scn.weilian.cn:8082/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
-
 	<modules>
 		<module>eureka-server</module>
 		<module>eureka-client</module>
