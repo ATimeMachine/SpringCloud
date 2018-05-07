@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  */
 @FeignClient(value = "eureka-consumer-ribbon",fallback = RibbonClientFallback.class)
 //因为fallback 有了实现类，所以要加上名字
-@Component("ribbonClient")
+@Component
 public interface RibbonClient {
 
     @GetMapping("/consumer")
