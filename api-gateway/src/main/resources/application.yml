@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: api-gateway
+server:
+  port: 2006
+#当访问http://localhost:2006/hello/test/ribbon，
+#这个时候我们就可以确保先加载eureka-consumer-ribbon的匹配规则，
+#后加载eureka-consumer-feign的匹配规则。
+zuul:
+  routes:
+    eureka-consumer-ribbon:
+      path: /hello/test/**
+      serviceId: eureka-consumer-ribbon
+    eureka-consumer-feign:
+      path: /hello/**
+      serviceId: eureka-consumer-feign
+  #路由忽略，不想给/abc接口路由
+  ignored-patterns: /**/abc/**
+
+#注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1001/eureka/
+
+
+
