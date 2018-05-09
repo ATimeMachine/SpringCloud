@@ -1,6 +1,7 @@
 package com.example.web;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Description:
  */
 @RestController
+@RefreshScope //实时刷新注解，要不然bus刷心了key,值还是不会变化
 public class ConfigClientController {
 
    @Value("${spring.datasource.password}")
