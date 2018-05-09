@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Description:
  */
 @RestController
-@RefreshScope //实时刷新注解，要不然bus刷心了key,值还是不会变化
+@RefreshScope //实时刷新注解，要不然bus刷新了key,值还是不会变化
 public class ConfigClientController {
 
    @Value("${spring.datasource.password}")
