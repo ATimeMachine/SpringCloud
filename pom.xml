@@ -74,6 +74,7 @@
 		<module>turbine</module>
 		<module>api-gateway</module>
 		<module>rabbitmq-hello</module>
+		<module>stream-hello</module>
 	</modules>
 
 </project>
