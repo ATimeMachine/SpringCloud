@@ -15,6 +15,6 @@ public class SinkReceiver2 {
 
     @StreamListener(Source.OUTPUT) //注册为对Source消息通道的监听处理器
     public void receive(Object playloud) {
-        System.out.println("信息通道监听器2 : " + playloud);
+        System.out.println("信息通道监听器(2 =====>): " + playloud);
     }
 }
