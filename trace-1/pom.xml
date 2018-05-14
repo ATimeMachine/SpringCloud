@@ -17,8 +17,6 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
@@ -38,6 +36,12 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+			<version>${jian.logback.version}</version>
 		</dependency>
 	</dependencies>
 
