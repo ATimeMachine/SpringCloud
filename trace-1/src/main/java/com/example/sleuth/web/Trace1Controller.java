@@ -6,5 +6,9 @@ package com.example.sleuth.web;
  * Date:     2018/5/11 18:04
  * Description:
  */
-public class Trace1Controller {
+public interface Trace1Controller {
+
+
+    String testString(String string);
+
 }
