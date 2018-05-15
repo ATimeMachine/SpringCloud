@@ -43,6 +43,11 @@
 			<artifactId>logstash-logback-encoder</artifactId>
 			<version>${jian.logback.version}</version>
 		</dependency>
+		<!--分布式系统的监控-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
+		</dependency>
 	</dependencies>
 
 </project>
